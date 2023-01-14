@@ -1,6 +1,6 @@
 Funcionalidades:
 1-Adicionar nota V
 2-Escrever inicialmente V
-3-armazenar (localstorage)
+3-armazenar (localstorage)V
 4-editar nota V
-5-deletar
+5-deletarV
