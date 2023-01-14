@@ -1,0 +1,121 @@
+::-webkit-scrollbar{
+  background: white;
+}
+::-webkit-scrollbar-thumb{
+  background:#465dbb;
+}
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-wrap: wrap;
+}
+* body {
+  background: #303030;
+}
+
+.headerGeneral {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-top: 1%;
+  font-size: 0.99em;
+}
+.headerGeneral span {
+  color: rgb(87, 87, 226);
+}
+
+.addContainer {
+	width: 100px;height: 100px;font-size: 1.3em;
+  border: 5px solid white;color: rgb(197, 77, 117);
+  border-radius: 20px;position: relative;margin-left: 46%;top:5vh;
+  display: flex;flex-direction: column;align-items: center;
+  
+}
+.addContainer h1{
+	margin-top:20% ;cursor: default;
+}
+.btnAdd{
+	position: absolute;top: 50%;
+	background: transparent;font-size: 30px;padding:15%;
+	border:none;color: white;
+	cursor: pointer;
+  transition: 1s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  .btnAdd:hover{
+    transform: scale(1.5);
+    color:rgb(87, 87, 226) ;
+  }
+
+.AllNotes{
+  display: grid;
+  grid-template-columns: repeat(3, 33.33333333%);
+  height: auto;width: auto;
+  position: relative;
+  justify-items: center;margin-top: 15%;
+}
+.AllNotes > div{
+  margin: 2.5%;
+  background: transparent;width: 25vw;height: 50vh;
+  box-shadow: 0 0 10px white;
+  display: flex;align-items: center;justify-content: center;
+}
+.AllNotes >div > textarea{
+  background:transparent;border: none;font-size: 20px;
+  width: 90%;height: 80%;resize: none;color: white;
+}
+.AllNotes >div > textarea:focus{
+  outline: none;
+}
+ textarea:focus + .btnSave{
+  display: block;
+}
+ .btnSave{
+  position: relative;top: 2.5%;left: -1%;
+  background: #5169ca;color: #fff;font-size: 1em;
+  width: 35%;height: 6%;border-radius: 5px;border: 2.5px solid #fff;
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+.btnSave:hover{
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #5169ca;
+}
+.delContainer{
+  width: 20%;height: 6%;position: relative;top: 2.5%;left:2% ;border:2px solid #fff;text-align: center;outline: none;
+  background-color:rgb(197, 77, 117) ;border-radius: 5px;cursor: pointer;color: white;transition: .3s ease-in;font-size: 1em;
+}
+.delContainer:hover{
+  color: rgb(197, 77, 117);
+  background: white;
+  transform: scale(1.1);
+}
+
+
+/*# sourceMappingURL=styles.css.map */
+/*responsividade*/
+@media screen and (max-width:1024px){
+  .delContainer{
+   font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width:768px){
+  .delContainer,.btnSave{
+    margin: 2%;
+  }
+  .delContainer{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width:425px){
+  .AllNotes{
+    grid-template-columns: repeat(2, 50.333333%);
+  }
+  .AllNotes > div{
+    width: 45vw;
+  }
+}
