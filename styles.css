@@ -53,11 +53,11 @@
   grid-template-columns: repeat(3, 33.33333333%);
   height: auto;width: auto;
   position: relative;
-  justify-items: center;margin-top: 15%;
+  justify-items: center;margin-top: 10%;
 }
 .AllNotes > div{
   margin: 2.5%;
-  background: transparent;width: 25vw;height: 50vh;
+  background: transparent;width: 25vw;height: 55vh;
   box-shadow: 0 0 10px white;
   display: flex;align-items: center;justify-content: center;
 }
