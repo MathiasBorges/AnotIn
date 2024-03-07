@@ -105,6 +105,8 @@
 @media screen and (max-width:768px){
   .delContainer,.btnSave{
     margin: 2%;
+    font-size: 3vw;
+
   }
   .delContainer{
     width: 30%;
