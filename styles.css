@@ -47,6 +47,7 @@ body {
   justify-content: center;
   margin: 0 auto 2rem;
   position: relative;
+<<<<<<< HEAD
 }
 .addContainer h1 {
   cursor: default;
@@ -80,6 +81,13 @@ body {
   width: 100%;
   max-width: 300px;
   height: 250px;
+=======
+  justify-items: center;margin-top: 10%;
+}
+.AllNotes > div{
+  margin: 2.5%;
+  background: transparent;width: 25vw;height: 55vh;
+>>>>>>> 201f13876a42fe1036fc74efa9ef373b947ee6b3
   box-shadow: 0 0 10px white;
   display: flex;
   align-items: center;
@@ -138,9 +146,17 @@ body {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 425px) {
   .AllNotes {
     grid-template-columns: 1fr;
+=======
+@media screen and (max-width:768px){
+  .delContainer,.btnSave{
+    margin: 2%;
+    font-size: 3vw;
+
+>>>>>>> 201f13876a42fe1036fc74efa9ef373b947ee6b3
   }
   .AllNotes > div {
     width: 90vw;
