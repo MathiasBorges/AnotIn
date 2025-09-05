@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>AnotIn</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script type="text/javascript" src="addANDremove.js" defer></script>
-  </head>
-  <body>
-    <div class="headerGeneral">
-      <h1>Bem-vindo ao <span>AnotIn</span></h1><br>
-      <h2>Registre o que quiser</h2>
-    </div>
-    
-    <article class="addContainer">
-      <h1>Add</h1>
-      <button class="btnAdd" onclick="AddNote()">+</button>
-    </article>
+<html lang="pt-BR">
+<head>
+  <title>AnotIn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="addANDremove.js" defer></script>
+</head>
+<body>
+  <div class="headerGeneral">
+    <h1>Bem-vindo ao <span>AnotIn</span></h1>
+    <p>Registre o que quiser</p>
+    <button class="darkModeToggle" onclick="toggleDarkMode()">Modo Escuro</button>
+  </div>
+  
+  <article class="addContainer">
+    <h2>Adicionar Nota</h2>
+    <button class="btnAdd" onclick="AddNote()">+</button>
+  </article>
 
-    <div class="AllNotes">
-      <button class="delContainer" onclick="delNote()"></button>
-     
-    </div>
-  </body>
+  <div class="AllNotes"></div>
+</body>
 </html>
