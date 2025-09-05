@@ -4,24 +4,32 @@
     <title>AnotIn</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnotIn - Registre suas ideias e pensamentos de forma simples e organizada.">
+    <meta name="description" content="AnotIn - Registre suas ideias de forma simples e elegante">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <script type="text/javascript" src="addANDremove.js" defer></script>
   </head>
   <body>
-    <header class="headerGeneral">
-      <h1>Bem-vindo ao <span>AnotIn</span></h1>
-      <p>Registre suas ideias com facilidade</p>
-    </header>
-    
-    <section class="addContainer">
-      <h2>Adicionar Nota</h2>
-      <button class="btnAdd" onclick="AddNote()" aria-label="Adicionar nova nota">+</button>
-    </section>
-
-    <section class="AllNotes" aria-label="Lista de notas">
-      <button class="delContainer" onclick="delNote()" aria-label="Deletar todas as notas">Deletar Todas</button>
-    </section>
+    <div class="app-container">
+      <aside class="sidebar">
+        <h1 class="logo">AnotIn</h1>
+        <button class="btnAdd" onclick="AddNote()" aria-label="Adicionar nova nota">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          Nova Nota
+        </button>
+        <button class="btnDeleteAll" onclick="deleteAllNotes()" aria-label="Deletar todas as notas">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m-10 5v6a2 2 0 002 2h4a2 2 0 002-2v-6"/>
+          </svg>
+          Deletar Todas
+        </button>
+      </aside>
+      <main class="main-content">
+        <section class="AllNotes" aria-label="Lista de notas"></section>
+      </main>
+    </div>
   </body>
 </html>
