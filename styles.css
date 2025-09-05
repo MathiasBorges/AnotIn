@@ -1,149 +1,252 @@
 /* Estilização da barra de rolagem */
 ::-webkit-scrollbar {
-    background: white;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #465dbb;
-    border-radius: 10px;
-  }
-  
-  /* Reset global e configuração base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  body {
-    background: #303030;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-  }
-  
-  /* Cabeçalho */
-  .headerGeneral {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 2rem;
-    font-size: 1em;
-  }
-  .headerGeneral span {
-    color: rgb(87, 87, 226);
-  }
-  
-  /* Container de adição de notas */
-  .addContainer {
-    width: 100px;
-    height: 100px;
-    font-size: 1.3em;
-    border: 5px solid white;
-    color: rgb(197, 77, 117);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2rem;
-    position: relative;
-  }
-  .addContainer h1 {
-    cursor: default;
-  }
-  .btnAdd {
-    background: transparent;
-    font-size: 30px;
-    padding: 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  .btnAdd:hover {
-    transform: scale(1.5);
-    color: rgb(87, 87, 226);
-  }
-  
-  /* Área das notas */
+  width: 8px;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 8px;
+}
+
+.dark-mode ::-webkit-scrollbar {
+  background: #1f2937;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: #818cf8;
+}
+
+/* Reset global e configuração base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode {
+  background: #1f2937;
+}
+
+/* Cabeçalho */
+.headerGeneral {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.headerGeneral h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.dark-mode .headerGeneral h1 {
+  color: #f3f4f6;
+}
+
+.headerGeneral span {
+  color: #4f46e5;
+}
+
+.headerGeneral p {
+  font-size: 1.2rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.dark-mode .headerGeneral p {
+  color: #d1d5db;
+}
+
+.darkModeToggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.darkModeToggle:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+/* Container de adição de notas */
+.addContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .addContainer {
+  background: #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addContainer h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.dark-mode .addContainer h2 {
+  color: #f3f4f6;
+}
+
+.btnAdd {
+  background: #4f46e5;
+  color: white;
+  font-size: 1.8rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnAdd:hover {
+  background: #4338ca;
+  transform: scale(1.1);
+}
+
+/* Área das notas */
+.AllNotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+}
+
+.AllNotes > div {
+  background: #ffffff;
+  width: 100%;
+  max-width: 320px;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .AllNotes > div {
+  background: #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.AllNotes > div > textarea {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  width: 100%;
+  height: 200px;
+  resize: none;
+  color: #1f2937;
+  padding: 0.75rem;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .AllNotes > div > textarea {
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.AllNotes > div > textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Botões de ação */
+.btnSave, .delContainer {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnSave {
+  background: #4f46e5;
+  color: white;
+}
+
+.btnSave:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.delContainer {
+  background: #ef4444;
+  color: white;
+}
+
+.delContainer:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .AllNotes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
-    justify-items: center;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
-  .AllNotes > div {
-    background: transparent;
-    width: 100%;
-    max-width: 300px;
-    height: 250px;
-    box-shadow: 0 0 10px white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .headerGeneral h1 {
+    font-size: 2rem;
+  }
+
+  .addContainer {
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
+    gap: 0.5rem;
   }
-  .AllNotes > div > textarea {
-    background: transparent;
-    border: none;
-    font-size: 16px;
-    width: 100%;
-    height: 90%;
-    resize: none;
-    color: white;
-    padding: 10px;
-    outline: none;
+}
+
+@media (max-width: 425px) {
+  .AllNotes {
+    grid-template-columns: 1fr;
   }
-  
-  /* Botões de ação */
-  .btnSave, .delContainer {
-    background: #5169ca;
-    color: #fff;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 5px;
-    border: 2.5px solid #fff;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    text-align: center;
-    width: 100px;
-    margin-top: 5.5px;
+
+  .AllNotes > div {
+    max-width: 100%;
   }
-  .btnSave:hover, .delContainer:hover {
-    transform: scale(1.1);
-    background-color: #fff;
-    color: #5169ca;
+
+  .headerGeneral h1 {
+    font-size: 1.8rem;
   }
-  .delContainer {
-    background-color: rgb(197, 77, 117);
+
+  .headerGeneral p {
+    font-size: 1rem;
   }
-  .delContainer:hover {
-    color: rgb(197, 77, 117);
-    background: white;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .AllNotes {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .AllNotes > div {
-      height: 270px;
-    }
-  }
-  
-  @media (max-width: 425px) {
-    .AllNotes {
-      grid-template-columns: 1fr;
-    }
-    .AllNotes > div {
-      width: 90vw;
-    }
-  }
-  
+}
