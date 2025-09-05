@@ -1,149 +1,205 @@
 /* Estilização da barra de rolagem */
 ::-webkit-scrollbar {
-    background: white;
+  width: 8px;
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a6ee0;
+  border-radius: 8px;
+}
+
+/* Reset global e configuração base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: #e0e0e0;
+}
+
+/* Cabeçalho */
+.headerGeneral {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.headerGeneral h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.headerGeneral span {
+  color: #4a6ee0;
+}
+
+.headerGeneral p {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  margin-top: 0.5rem;
+}
+
+/* Container de adição de notas */
+.addContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #2a2a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.addContainer:hover {
+  transform: translateY(-4px);
+}
+
+.addContainer h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btnAdd {
+  background: #4a6ee0;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btnAdd:hover {
+  background: #3b55b8;
+  transform: scale(1.1);
+}
+
+/* Área das notas */
+.AllNotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+.AllNotes > div {
+  background: #2a2a2a;
+  width: 100%;
+  max-width: 320px;
+  height: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.AllNotes > div:hover {
+  transform: translateY(-4px);
+}
+
+.AllNotes > div > textarea {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  height: 85%;
+  resize: none;
+  color: #e0e0e0;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.AllNotes > div > textarea::placeholder {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* Botões de ação */
+.btnSave,
+.delContainer {
+  background: #4a6ee0;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  width: 120px;
+  margin-top: 0.5rem;
+}
+
+.btnSave:hover,
+.delContainer:hover {
+  background: #ffffff;
+  color: #4a6ee0;
+  transform: scale(1.05);
+}
+
+.delContainer {
+  background: #d9534f;
+}
+
+.delContainer:hover {
+  background: #ffffff;
+  color: #d9534f;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .headerGeneral h1 {
+    font-size: 2rem;
   }
-  ::-webkit-scrollbar-thumb {
-    background: #465dbb;
-    border-radius: 10px;
-  }
-  
-  /* Reset global e configuração base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  body {
-    background: #303030;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-  }
-  
-  /* Cabeçalho */
-  .headerGeneral {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 2rem;
-    font-size: 1em;
-  }
-  .headerGeneral span {
-    color: rgb(87, 87, 226);
-  }
-  
-  /* Container de adição de notas */
-  .addContainer {
-    width: 100px;
-    height: 100px;
-    font-size: 1.3em;
-    border: 5px solid white;
-    color: rgb(197, 77, 117);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2rem;
-    position: relative;
-  }
-  .addContainer h1 {
-    cursor: default;
-  }
-  .btnAdd {
-    background: transparent;
-    font-size: 30px;
-    padding: 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  .btnAdd:hover {
-    transform: scale(1.5);
-    color: rgb(87, 87, 226);
-  }
-  
-  /* Área das notas */
+
   .AllNotes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
-    justify-items: center;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
+
   .AllNotes > div {
-    background: transparent;
-    width: 100%;
-    max-width: 300px;
-    height: 250px;
-    box-shadow: 0 0 10px white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 280px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 425px) {
+  .headerGeneral h1 {
+    font-size: 1.8rem;
+  }
+
+  .addContainer {
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 1.5rem;
   }
-  .AllNotes > div > textarea {
-    background: transparent;
-    border: none;
-    font-size: 16px;
-    width: 100%;
-    height: 90%;
-    resize: none;
-    color: white;
-    padding: 10px;
-    outline: none;
+
+  .AllNotes {
+    grid-template-columns: 1fr;
   }
-  
-  /* Botões de ação */
-  .btnSave, .delContainer {
-    background: #5169ca;
-    color: #fff;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 5px;
-    border: 2.5px solid #fff;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    text-align: center;
-    width: 100px;
-    margin-top: 5.5px;
+
+  .AllNotes > div {
+    max-width: 90vw;
   }
-  .btnSave:hover, .delContainer:hover {
-    transform: scale(1.1);
-    background-color: #fff;
-    color: #5169ca;
-  }
-  .delContainer {
-    background-color: rgb(197, 77, 117);
-  }
-  .delContainer:hover {
-    color: rgb(197, 77, 117);
-    background: white;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .AllNotes {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .AllNotes > div {
-      height: 270px;
-    }
-  }
-  
-  @media (max-width: 425px) {
-    .AllNotes {
-      grid-template-columns: 1fr;
-    }
-    .AllNotes > div {
-      width: 90vw;
-    }
-  }
-  
+}
