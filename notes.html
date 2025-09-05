@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <title>AnotIn</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AnotIn - Registre suas ideias e pensamentos de forma simples e organizada.">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <script type="text/javascript" src="addANDremove.js" defer></script>
   </head>
   <body>
-    <div class="headerGeneral">
-      <h1>Bem-vindo ao <span>AnotIn</span></h1><br>
-      <h2>Registre o que quiser</h2>
-    </div>
+    <header class="headerGeneral">
+      <h1>Bem-vindo ao <span>AnotIn</span></h1>
+      <p>Registre suas ideias com facilidade</p>
+    </header>
     
-    <article class="addContainer">
-      <h1>Add</h1>
-      <button class="btnAdd" onclick="AddNote()">+</button>
-    </article>
+    <section class="addContainer">
+      <h2>Adicionar Nota</h2>
+      <button class="btnAdd" onclick="AddNote()" aria-label="Adicionar nova nota">+</button>
+    </section>
 
-    <div class="AllNotes">
-      <button class="delContainer" onclick="delNote()"></button>
-     
-    </div>
+    <section class="AllNotes" aria-label="Lista de notas">
+      <button class="delContainer" onclick="delNote()" aria-label="Deletar todas as notas">Deletar Todas</button>
+    </section>
   </body>
 </html>
